@@ -1,0 +1,32 @@
+.contrpanel{
+    position: fixed;
+    top: 40px;
+    left: 40px;
+    width:230px;
+    height:300px;
+    z-index: 2;
+}
+
+.asc{
+	background:url(sort_asc_disabled.png);
+	display:inline-block;
+	width:19px;
+	height:19px;
+}
+
+.asc:hover {
+	background:url(sort_asc.png);
+	cursor: default;
+}
+
+.desc{
+	background:url(sort_desc_disabled.png);
+	display:inline-block;
+	width:19px;
+	height:19px;
+}
+
+.desc:hover {
+	background:url(sort_desc.png);
+	cursor: default;
+}
