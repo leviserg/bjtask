@@ -43,9 +43,9 @@
 				$this->error = 'Enter text from 3 to 5000 chars';
 				return false;
 			} elseif (!filter_var($task['task_email'], FILTER_VALIDATE_EMAIL)) {
-    			$this->error = 'Enter valid E-mail';
+    				$this->error = 'Enter valid E-mail';
 				return false;
-            }      
+             		}      
 			if (empty($_FILES['img']['tmp_name']) && $type === 'add') {
 				$this->error = 'Image is not selected';
 				return false;
@@ -80,7 +80,7 @@
 				'pict' => 'task_'.$curid.'.jpg',
 				'changed' => date("Y-m-d H:i:s"),
 				'completed' => 0,
-                'edited' => 0
+                		'edited' => 0
 			];
 			$this->db->query('INSERT INTO tasks VALUES (:id, :name, :email, :content, :pict, :changed, :completed, :edited)', $params);
 			return $curid;
@@ -142,7 +142,7 @@
 				'content' => $post['task_content'],
 				'changed' => date("Y-m-d H:i:s"),
 				'completed' => $completed,
-                'edited' => 1
+                		'edited' => 1
 			];
 			$this->db->query('UPDATE tasks SET name = :name, email = :email, content = :content, changed = :changed, completed = :completed, edited = :edited WHERE id = :id', $params);
 		}
