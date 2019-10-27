@@ -39,13 +39,13 @@
 			if ($nameLen < 3 or $nameLen > 40) {
 				$this->error = 'Enter title from 3 to 40 chars';
 				return false;
+			} elseif (!filter_var($task['task_email'], FILTER_VALIDATE_EMAIL)) {
+    			$this->error = 'Enter valid E-mail';
+				return false;				
 			} elseif ($textLen < 3 or $textLen > 5000) {
 				$this->error = 'Enter text from 3 to 5000 chars';
 				return false;
-			} elseif (!filter_var($task['task_email'], FILTER_VALIDATE_EMAIL)) {
-    			$this->error = 'Enter valid E-mail';
-				return false;
-            }      
+			}
 			if (empty($_FILES['img']['tmp_name']) && $type === 'add') {
 				$this->error = 'Image is not selected';
 				return false;
