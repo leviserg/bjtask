@@ -7,8 +7,8 @@
         ],
         'admin' => [
             'login',
-	    'index',
-	    'logout'
+	        'index',
+	        'logout'
         ],
     ];
 ?>
