@@ -40,7 +40,7 @@
 				$this->error = 'Enter title from 3 to 40 chars';
 				return false;
 			} elseif (!filter_var($task['task_email'], FILTER_VALIDATE_EMAIL)) {
-    			$this->error = 'Enter valid E-mail';
+    				$this->error = 'Enter valid E-mail';
 				return false;				
 			} elseif ($textLen < 3 or $textLen > 5000) {
 				$this->error = 'Enter text from 3 to 5000 chars';
