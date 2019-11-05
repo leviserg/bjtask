@@ -5,6 +5,8 @@ use application\core\Controller;
 
 class AdminController extends Controller {
 
+	public $defaultpage = 'main/index/changed/desc/1';// 'main/index/changed/desc/1'
+
 	public function __construct($route){
 		parent::__construct($route);
 		$this->view->layout = 'admin';
@@ -12,7 +14,7 @@ class AdminController extends Controller {
 
 	public function loginAction() {
 		if(isset($_SESSION['admin'])){
-			$this->view->redirect('main/index/1');
+			$this->view->redirect($this->defaultpage);
 		}
 		if(!empty($_POST)){
 			if(!$this->model->loginValidate($_POST)){
@@ -22,12 +24,12 @@ class AdminController extends Controller {
 				$_SESSION['admin'] = 1;
 				$this->view->message('success','Click OK to enter');
 				sleep(1);
-				$this->view->redirect('main/index/1');
+				$this->view->redirect($this->defaultpage);
 				exit();
 			}
 		}
 		if(isset($_SESSION['admin'])){
-			$this->view->redirect('main/index/1');
+			$this->view->redirect($this->defaultpage);
 		}else{
 			$this->view->render('Login Page');
 		}
@@ -35,7 +37,7 @@ class AdminController extends Controller {
 
 	public function logoutAction() {
 		unset($_SESSION['admin']);
-		$this->view->redirect('main/index/1');
+		$this->view->redirect($this->defaultpage);
 	}
 
 }

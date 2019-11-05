@@ -8,8 +8,33 @@
 		<link href="/public/styles/favicon.ico" rel="shortcut icon">
 	</head>
 	<body>
-		<div class="container-fluid">
+	    <nav class="navbar navbar-expand-sm navbar-dark bg-success">
+	        <a class="navbar-brand" href="/">Home</a>
+	         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+	            <span class="navbar-toggler-icon"></span>
+	        </button>
+	        <div class="collapse navbar-collapse" id="navbarContent">
+	            <ul class="navbar-nav mr-auto">
+	                <li class="nav-item active text-center">
+	                	<a class="nav-link" id="addtask" data-toggle="tooltip" title="Add Task">Add Task</a>
+	                </li>
+	            </ul>
+	            <ul class="navbar-nav ml-auto">
+	                <li class="nav-item active text-center">
+	                	<?php if (!isset($_SESSION['admin'])): ?>
+							<a class="nav-link" id="loginbtn" data-toggle="tooltip" title="System Login" href="/admin/login">Login</a>
+							<p id="session" style="display:none">0</p>
+						<?php else: ?>
+							<a class="nav-link" id="logoutnbtn" data-toggle="tooltip" title="System Logout" href="/admin/logout">Logout</a>
+							<p id="session" style="display:none">1</p>
+						<?php endif; ?>
+	                </li>
+	            </ul>
+	        </div>
+	    </nav>
+		<div class="container container-fluid">
 			<div class="row mt-4 text-center">
+				<!--
 				<div class="col-md-1 clearfix"></div>
 				<div class="col-md-2 px-4">
 					<br/>
@@ -17,17 +42,18 @@
 						<div class="card card-header text-center"><h5 class="text-success">Control Panel</h5></div>
 						<div class="card card-body text-center">
 							<button class="btn btn-success btn-block mt-2" id="addtask">Add Task</button>
-							<?php if (!isset($_SESSION['admin'])): ?>
+							<?php //if (!isset($_SESSION['admin'])): ?>
 								<a class="btn btn-info btn-block mt-2" id="loginbtn" href="/admin/login">Login</a>
 								<p id="session" style="display:none">0</p>
-							<?php else: ?>
+							<?php //else: ?>
 								<a class="btn btn-info btn-block mt-2" id="logoutnbtn" href="/admin/logout">Logout</a>
 								<p id="session" style="display:none">1</p>
-							<?php endif; ?>
+							<?php //endif; ?>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-8">
+				-->
+				<div class="col-md-12">
 					<?php echo $content; ?>
 				</div>
 			</div>
