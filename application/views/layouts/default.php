@@ -22,12 +22,12 @@
 	            <ul class="navbar-nav ml-auto">
 	                <li class="nav-item active text-center">
 	                	<?php if (!isset($_SESSION['admin'])): ?>
-							<a class="nav-link" id="loginbtn" data-toggle="tooltip" title="System Login" href="/admin/login">Login</a>
-							<p id="session" style="display:none">0</p>
-						<?php else: ?>
-							<a class="nav-link" id="logoutnbtn" data-toggle="tooltip" title="System Logout" href="/admin/logout">Logout</a>
-							<p id="session" style="display:none">1</p>
-						<?php endif; ?>
+					<a class="nav-link" id="loginbtn" data-toggle="tooltip" title="System Login" href="/admin/login">Login</a>
+					<p id="session" style="display:none">0</p>
+				<?php else: ?>
+					<a class="nav-link" id="logoutnbtn" data-toggle="tooltip" title="System Logout" href="/admin/logout">Logout</a>
+					<p id="session" style="display:none">1</p>
+				<?php endif; ?>
 	                </li>
 	            </ul>
 	        </div>
@@ -88,7 +88,7 @@
 					<small>&copy; Sergey Levitskiy. Specially for BeeJee</small>
 				</div>
 			</div>
-        </footer>		
+        	</footer>		
 		<script src="/public/scripts/jquery.js"></script>
 		<script src="/public/scripts/popper.js"></script>
 		<script src="/public/scripts/bootstrap.js"></script>
