@@ -34,25 +34,6 @@
 	    </nav>
 		<div class="container container-fluid">
 			<div class="row mt-4 text-center">
-				<!--
-				<div class="col-md-1 clearfix"></div>
-				<div class="col-md-2 px-4">
-					<br/>
-					<div class="card mt-2">
-						<div class="card card-header text-center"><h5 class="text-success">Control Panel</h5></div>
-						<div class="card card-body text-center">
-							<button class="btn btn-success btn-block mt-2" id="addtask">Add Task</button>
-							<?php //if (!isset($_SESSION['admin'])): ?>
-								<a class="btn btn-info btn-block mt-2" id="loginbtn" href="/admin/login">Login</a>
-								<p id="session" style="display:none">0</p>
-							<?php //else: ?>
-								<a class="btn btn-info btn-block mt-2" id="logoutnbtn" href="/admin/logout">Logout</a>
-								<p id="session" style="display:none">1</p>
-							<?php //endif; ?>
-						</div>
-					</div>
-				</div>
-				-->
 				<div class="col-md-12">
 					<?php echo $content; ?>
 				</div>

@@ -5,7 +5,7 @@ use application\core\Controller;
 
 class AdminController extends Controller {
 
-	public $defaultpage = 'main/index/changed/desc/1';// 'main/index/changed/desc/1'
+	public $defaultpage = 'main/index/changed/desc/1';
 
 	public function __construct($route){
 		parent::__construct($route);
